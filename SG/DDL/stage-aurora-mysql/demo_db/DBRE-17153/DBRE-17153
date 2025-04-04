@@ -1,0 +1,1 @@
+create table v_six (id char(14) PRIMARY KEY);
