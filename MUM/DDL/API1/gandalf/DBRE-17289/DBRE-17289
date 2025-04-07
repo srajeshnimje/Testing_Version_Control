@@ -1,0 +1,1 @@
+create table parnit_demo_v1 ( id char(14) PRIMARY KEY);
