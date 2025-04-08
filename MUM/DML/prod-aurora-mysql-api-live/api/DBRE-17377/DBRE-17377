@@ -1,0 +1,1 @@
+UPDATE schedule_tasks SET deleted_at = UNIX_TIMESTAMP() and updated_at = UNIX_TIMESTAMP()  WHERE id = 35406797;
