@@ -1,0 +1,1 @@
+alter table notification_detail add column c21 varchar(24) default null;
