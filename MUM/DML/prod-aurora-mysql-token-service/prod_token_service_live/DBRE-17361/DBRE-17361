@@ -1,0 +1,5 @@
+UPDATE cards
+SET id = 'QG7nGIZ0EGpPTq'
+WHERE id = ''
+  AND merchant_id = 'N2yQGNxRXTAzoZ'
+  AND updated_at = 1744019541;
