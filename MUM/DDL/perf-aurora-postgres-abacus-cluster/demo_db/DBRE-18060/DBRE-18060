@@ -1,0 +1,1 @@
+create table testing_merge_9(id char(14) PRIMARY KEY);
