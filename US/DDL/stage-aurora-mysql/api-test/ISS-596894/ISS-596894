@@ -1,0 +1,1 @@
+create table cell_test_four(id char(14) PRIMARY KEY);
