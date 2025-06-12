@@ -1,0 +1,1 @@
+create table dev_test(id char(14) PRIMARY KEY);
