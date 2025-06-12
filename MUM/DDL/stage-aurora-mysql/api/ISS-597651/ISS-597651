@@ -1,0 +1,1 @@
+ alter table demo_test_cell_one add column name varchar(20);
