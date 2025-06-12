@@ -1,0 +1,1 @@
+create table demo_test_cell_two (id char(14) PRIMARY KEY);
