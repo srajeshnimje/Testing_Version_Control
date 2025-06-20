@@ -1,0 +1,1 @@
+alter table demo_test_region_one add column name text;
