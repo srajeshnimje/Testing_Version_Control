@@ -1,0 +1,3 @@
+ALTER TABLE `US`.`checkout_orders` COLLATE utf8mb4_0900_ai_ci;
+
+ALTER TABLE `US`.`checkout_orders` MODIFY COLUMN `status` TEXT CHARACTER SET utf8mb4;
