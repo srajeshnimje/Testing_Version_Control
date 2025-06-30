@@ -1,0 +1,9 @@
+CREATE TABLE `gandalf`.`instance_tuning_config` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `instance` varchar(200) NOT NULL,
+  `data_type` varchar(50) NOT NULL,
+  `initial_days` int NOT NULL,
+  `period_days` int NOT NULL,
+  `horizon_days` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
