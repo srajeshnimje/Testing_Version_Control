@@ -1,0 +1,13 @@
+CREATE TABLE `gandalf`.`instance_config` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `instance` varchar(255) NOT NULL,
+  `anomaly_comparison_frequency` int DEFAULT '5',
+  `comparison_window_size` int DEFAULT '10',
+  `tuning_service_status` tinyint(1) NOT NULL DEFAULT '0',
+  `anomaly_threshold` double NOT NULL DEFAULT '1.5',
+  `future_alert_service_status` tinyint(1) NOT NULL DEFAULT '1',
+  `test_column` int NOT NULL DEFAULT '9',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `instance` (`instance`),
+  UNIQUE KEY `unique_instance_name` (`instance`,`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
