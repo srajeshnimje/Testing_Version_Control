@@ -1,0 +1,22 @@
+CREATE TABLE `gandalf_copy`.`ips_instance_tuning_config` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `instance` varchar(100) NOT NULL,
+  `data_type` varchar(20) NOT NULL,
+  `initial_days` int NOT NULL,
+  `period_days` int NOT NULL,
+  `horizon_days` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `gandalf_copy`.`ips_instance_config` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `instance` varchar(255) NOT NULL,
+  `anomaly_detection_service_status` tinyint(1) DEFAULT '1',
+  `anomaly_comparison_frequency` int DEFAULT '5',
+  `comparison_window_size` int DEFAULT '10',
+  `tuning_service_status` tinyint(1) DEFAULT '1',
+  `anomaly_threshold` double NOT NULL DEFAULT '1.5',
+  `future_alert_service_status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_instance_name` (`instance`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
