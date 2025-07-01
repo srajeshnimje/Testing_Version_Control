@@ -1,0 +1,10 @@
+CREATE TABLE `gandalf`.`anomaly_alerts` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `instance` varchar(255) NOT NULL,
+  `start_time` datetime NOT NULL,
+  `end_time` datetime NOT NULL,
+  `num_anomalies` int NOT NULL,
+  `avg_anomaly_score` float NOT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
