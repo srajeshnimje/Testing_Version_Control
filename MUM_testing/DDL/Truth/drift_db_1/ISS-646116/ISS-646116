@@ -1,0 +1,6 @@
+CREATE TABLE public.logs_part_1 (
+    id integer DEFAULT nextval('public.logs_id_seq'::regclass) NOT NULL,
+    log_time timestamp without time zone,
+    message text
+);
+ALTER TABLE public.logs_part_1 OWNER TO root;
