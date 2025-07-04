@@ -1,0 +1,1 @@
+ALTER TABLE "public"."demo_region_postgres" ADD COLUMN "country" TEXT;
