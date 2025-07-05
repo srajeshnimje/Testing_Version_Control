@@ -1,0 +1,1 @@
+CREATE TABLE `instance_tuning_config` ( `id` int NOT NULL AUTO_INCREMENT, `instance` varchar(100) NOT NULL, `data_type` varchar(20) NOT NULL, `initial_days` int NOT NULL, `period_days` int NOT NULL, `horizon_days` int NOT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
