@@ -1,0 +1,1 @@
+ALTER TABLE devices MODIFY COLUMN status ENUM('inactive','active','pending','archived') NOT NULL DEFAULT 'active';
