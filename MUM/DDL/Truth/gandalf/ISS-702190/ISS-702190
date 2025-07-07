@@ -1,0 +1,1 @@
+ALTER TABLE `devices` ADD CONSTRAINT `fk_devices_instance_copy` FOREIGN KEY (`instance`) REFERENCES `instances` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
