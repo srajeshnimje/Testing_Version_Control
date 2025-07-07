@@ -1,0 +1,3 @@
+CREATE TABLE public.logs_part_2 (id integer DEFAULT nextval('public.logs_id_seq'::regclass) NOT NULL, log_time timestamp without time zone, message text); ALTER TABLE public.logs_part_2 OWNER TO root; ALTER TABLE ONLY public.logs ATTACH PARTITION public.logs_part_2 FOR VALUES IN (1, 2, 3);
+
+CREATE TABLE public.logs_part_1 (id integer DEFAULT nextval('public.logs_id_seq'::regclass) NOT NULL, log_time timestamp without time zone, message text); ALTER TABLE public.logs_part_1 OWNER TO root;
