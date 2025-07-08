@@ -1633,7 +1633,7 @@ CREATE TABLE `gandalf_versioning` (
   `version` varchar(20) DEFAULT NULL,
   `pr_link` text,
   `repo_file_path` text,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_region_instance_db_version` (`region`,`instance_name`,`databaseName`,`version`)
 ) ENGINE=InnoDB AUTO_INCREMENT=265 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -2953,4 +2953,4 @@ CREATE TABLE `vendor_payments_stage` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-04 16:45:13
+-- Dump completed on 2025-07-08 13:10:07
