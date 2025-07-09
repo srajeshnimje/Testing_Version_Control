@@ -170,6 +170,32 @@ ALTER TABLE ONLY public.notification_destinations REPLICA IDENTITY FULL;
 ALTER TABLE public.notification_destinations OWNER TO sakshi;
 
 --
+-- Name: offer_publishers; Type: TABLE; Schema: public; Owner: sakshi
+--
+
+CREATE TABLE public.offer_publishers (
+    id character(14) NOT NULL,
+    created_at bigint NOT NULL,
+    updated_at bigint NOT NULL,
+    deleted_at bigint,
+    offer_id character(14) NOT NULL,
+    publisher_id character varying(50) NOT NULL,
+    publish_channel character varying(50) DEFAULT 'RZP_STD_CHECKOUT'::character varying,
+    total_usage integer DEFAULT 0,
+    total_discount_consumed integer DEFAULT 0,
+    total_cashback_consumed integer DEFAULT 0,
+    starts_at bigint NOT NULL,
+    ends_at bigint NOT NULL,
+    state character varying(50) DEFAULT 'STATE_CREATED'::character varying,
+    offer_type character varying(50) DEFAULT 'OFFER_TYPE_STAGE_REGULAR'::character varying,
+    auto_apply boolean DEFAULT true,
+    continue_txn_on_failure boolean DEFAULT true
+);
+
+
+ALTER TABLE public.offer_publishers OWNER TO sakshi;
+
+--
 -- Name: postgres_dev; Type: TABLE; Schema: public; Owner: sakshi
 --
 
@@ -404,6 +430,14 @@ ALTER TABLE ONLY public.multiple_create_test_6april
 
 
 --
+-- Name: offer_publishers offer_publishers_pkey; Type: CONSTRAINT; Schema: public; Owner: sakshi
+--
+
+ALTER TABLE ONLY public.offer_publishers
+    ADD CONSTRAINT offer_publishers_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: postgres_dev postgres_dev_pkey; Type: CONSTRAINT; Schema: public; Owner: sakshi
 --
 
@@ -481,6 +515,55 @@ ALTER TABLE ONLY public.v_11
 
 ALTER TABLE ONLY public.v_11_temp_1
     ADD CONSTRAINT v_11_temp_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: idx_offer_publishers_created_at; Type: INDEX; Schema: public; Owner: sakshi
+--
+
+CREATE INDEX idx_offer_publishers_created_at ON public.offer_publishers USING btree (created_at);
+
+
+--
+-- Name: idx_offer_publishers_offer_id_publisher_id; Type: INDEX; Schema: public; Owner: sakshi
+--
+
+CREATE INDEX idx_offer_publishers_offer_id_publisher_id ON public.offer_publishers USING btree (offer_id, publisher_id);
+
+
+--
+-- Name: idx_offer_publishers_offer_meta; Type: INDEX; Schema: public; Owner: sakshi
+--
+
+CREATE INDEX idx_offer_publishers_offer_meta ON public.offer_publishers USING btree (offer_type, publisher_id, publish_channel, state, starts_at, ends_at);
+
+
+--
+-- Name: idx_offer_publishers_offer_publisher_unique; Type: INDEX; Schema: public; Owner: sakshi
+--
+
+CREATE UNIQUE INDEX idx_offer_publishers_offer_publisher_unique ON public.offer_publishers USING btree (offer_id, publisher_id, publish_channel);
+
+
+--
+-- Name: idx_offer_publishers_publisher; Type: INDEX; Schema: public; Owner: sakshi
+--
+
+CREATE INDEX idx_offer_publishers_publisher ON public.offer_publishers USING btree (publisher_id);
+
+
+--
+-- Name: idx_offer_publishers_publisher_duration; Type: INDEX; Schema: public; Owner: sakshi
+--
+
+CREATE INDEX idx_offer_publishers_publisher_duration ON public.offer_publishers USING btree (publisher_id, starts_at, ends_at);
+
+
+--
+-- Name: idx_offer_publishers_updated_at; Type: INDEX; Schema: public; Owner: sakshi
+--
+
+CREATE INDEX idx_offer_publishers_updated_at ON public.offer_publishers USING btree (updated_at);
 
 
 --
