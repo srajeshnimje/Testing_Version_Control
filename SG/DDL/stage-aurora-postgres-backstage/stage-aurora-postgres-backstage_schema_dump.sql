@@ -18,22 +18,6 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: public; Type: SCHEMA; Schema: -; Owner: sakshi.rajeshnimje
---
-
-CREATE SCHEMA public;
-
-
-ALTER SCHEMA public OWNER TO "sakshi.rajeshnimje";
-
---
--- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: sakshi.rajeshnimje
---
-
-COMMENT ON SCHEMA public IS 'standard public schema';
-
-
---
 -- Name: mood_enum; Type: TYPE; Schema: public; Owner: sakshi
 --
 
