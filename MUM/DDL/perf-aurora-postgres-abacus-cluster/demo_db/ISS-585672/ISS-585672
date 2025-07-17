@@ -1,0 +1,1 @@
+create table ISS_585672(id char(14) PRIMARY KEY);
